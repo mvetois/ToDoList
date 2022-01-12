@@ -4,10 +4,6 @@ import { data, ICategories } from "../db/data";
 
 const router : Router = Router();
 
-router.use("/", (req : Request, res : Response) => {
-    res.status(200).json({ message: "Item managment !" });
-});
-
 router.post("/add", (req : Request, res : Response) => {
     if (!req.body.name || !req.body.category)
         return (res.status(400).json({error: "Error : name or category is missing !"}));
