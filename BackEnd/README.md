@@ -2,7 +2,6 @@
 
 ## Run project
 
-------------
 
 ### Install the dependencies
 
@@ -10,13 +9,7 @@
 $> npm install
 ```
 
-### Build the project
-
-```bash
-$> npm run build
-```
-
-### Start the project
+### Build and start the project
 
 ```bash
 $> npm start
@@ -26,13 +19,15 @@ If you want to relaunch the project several times, it is not necessary to reinst
 
 ## How to use the API
 
+To launch this project, you must have the api running on the same machine as the web application!
+
 ### API
 
-Once the API is running, you will need to go to the link `http://localhost:3001/api/` if you are on your local machine, or at the link on your server and add `/api/`, to make API calls.
+Once the API is running, you will need to go to the link `http://localhost:3001/api/`.
 
 ### Documentation
 
-Once the API is running, you will need to go to the link `http://localhost:3001/doc/` if you are on your local machine, or at the link on your server and add `/doc/`, to view the documentation of the API.
+Once the API is running, you will need to go to the link `http://localhost:3001/doc/`.
 
 ## Project members
 
