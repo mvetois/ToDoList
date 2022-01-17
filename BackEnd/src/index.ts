@@ -3,6 +3,7 @@ import express, { Express } from "express";
 import cors from "cors";
 
 import router from "./router/index";
+import swagger from "./router/swagger";
 
 const app : Express = express();
 
@@ -18,4 +19,5 @@ app.listen(3001, () : void => {
     console.log("Api up !");
 });
 
-app.use("/api", router)
+app.use("/api", router);
+app.use("/doc", swagger);
