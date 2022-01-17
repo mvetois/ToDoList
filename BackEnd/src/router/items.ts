@@ -4,9 +4,31 @@ import { data, ICategories } from "../db/data";
 
 const router : Router = Router();
 
-router.use("/", (req : Request, res : Response) => {
-    res.status(200).json({ message: "Item managment !" });
-});
+/**
+ * @swagger
+ * /api/item/add:
+ *   post:
+ *     description: Add an item in a category.
+ *     tags:
+ *       - API
+ *       - Item
+ *     parameters:
+ *       - name: name
+ *         description: Item's name.
+ *         in: "formData"
+ *         required: true
+ *         type: string
+ *       - name: category
+ *         description: Category's name.
+ *         in: "formData"
+ *         required: true
+ *         type: string
+ *     responses:
+ *       200:
+ *         description: Sucess!
+ *       400:
+ *         description: Error!
+*/
 
 router.post("/add", (req : Request, res : Response) => {
     if (!req.body.name || !req.body.category)
@@ -19,6 +41,32 @@ router.post("/add", (req : Request, res : Response) => {
     data[data.indexOf(category)].items.push({name: req.body.name, checked: false});
     return (res.status(200).json({message: "Item added !"}));
 });
+
+/**
+ * @swagger
+ * /api/item/rem:
+ *   post:
+ *     description: Remove an item in a category.
+ *     tags:
+ *       - API
+ *       - Item
+ *     parameters:
+ *       - name: name
+ *         description: Item's name.
+ *         in: "formData"
+ *         required: true
+ *         type: string
+ *       - name: category
+ *         description: Category's name.
+ *         in: "formData"
+ *         required: true
+ *         type: string
+ *     responses:
+ *       200:
+ *         description: Sucess!
+ *       400:
+ *         description: Error!
+*/
 
 router.post("/rem", (req : Request, res : Response) => {
     if (!req.body.name || !req.body.category)

@@ -4,6 +4,32 @@ import { data, ICategories } from "../db/data";
 
 const router : Router = Router();
 
+/**
+ * @swagger
+ * /api/checked:
+ *   post:
+ *     description: Check or uncheck an item in a category.
+ *     tags:
+ *       - API
+ *       - Check
+ *     parameters:
+ *       - name: name
+ *         description: Item's name.
+ *         in: "formData"
+ *         required: true
+ *         type: string
+ *       - name: category
+ *         description: Category's name.
+ *         in: "formData"
+ *         required: true
+ *         type: string
+ *     responses:
+ *       200:
+ *         description: Sucess !
+ *       400:
+ *         description: Error !
+*/
+
 router.post("/", (req : Request, res : Response) => {
     if (!req.body.name || !req.body.category)
         return (res.status(400).json({error: "Error : item name or category name is missing !"}));
